@@ -1,0 +1,100 @@
+﻿<!--<!DOCTYPE html>
+<html lang="en" data-ng-app="tmsApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TMS</title>
+    
+    
+    <link rel="stylesheet" href="~/Content/themes/site/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="~/Content/themes/site/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/themes/site/js/jquery-migrate-1.1.1.min.js"></script>
+</head>-->
+
+<script type="text/javascript">
+    $('.leftmenu').hide();
+    $('.userinfo').hide();
+    $('.input-append').hide();
+</script>
+
+<body class="loginbody">
+
+    <div class="loginwrapper">
+        <div class="loginwrap zindex100 animate2 bounceInDown">
+            <h1 class="logintitle"><span class="iconfa-lock"></span>Sign In <span class="subtitle">Hello! Sign in to get you started!</span></h1>
+            <div class="loginwrapperinner">
+
+                <!--<form name="loginForm" novalidate data-ng-submit="save(newTrainingStrategyForm)">-->
+                <form class="loginForm" role="form" name="LoginForm" novalidate>
+
+                    <p class="animate4 bounceIn">
+                        <input name="UserName" placeholder="User name" type="text" data-ng-model="user.userName" required />
+
+                    </p>
+                    <p class="animate5 bounceIn">
+                        <input name="Password" type="password" placeholder="Password" data-ng-model="user.password" required />
+
+                    </p>
+                    <p class="animate6 bounceIn">
+
+
+                        <input type="button" class="btn btn-primary" value="Login" ng-click="login(user)" data-ng-disabled="loginForm.$invalid" />
+                        <!--<button class="btn btn-success" ng-click="login(user)">
+                <i class="fa fa-lock"></i>
+                Log in
+            </button>
+            <i class="fa fa-refresh fa-spin fa-lg" ng-if="loginInProgress"></i>-->
+                    </p>
+
+
+                </form>
+                <p>
+                    <span style="color:white;">{{msg}}</span>
+                    <br />
+
+                    <a href="#/account/register">Signup</a> 
+                    <a href="" style="float:right;">Forgot Password?</a>
+                </p>
+            </div>
+            <!--loginwrapperinner-->
+
+        </div>
+        <div class="loginshadow animate3 fadeInUp"></div>
+
+    </div>
+    <!--loginwrapper-->
+
+    <script type="text/javascript">
+        jQuery.noConflict();
+
+        jQuery(document).ready(function () {
+
+            var anievent = (jQuery.browser.webkit) ? 'webkitAnimationEnd' : 'animationend';
+            jQuery('.loginwrap').bind(anievent, function () {
+                jQuery(this).removeClass('animate2 bounceInDown');
+            });
+
+            jQuery('#UserName,#Password').focus(function () {
+                if (jQuery(this).hasClass('error')) jQuery(this).removeClass('error');
+            });
+
+            jQuery('#signupform input[type="submit"]').click(function () {
+                if (!jQuery.browser.msie) {
+                    if (jQuery('#UserName').val() == '' || jQuery('#Password').val() == '') {
+                        if (jQuery('#UserName').val() == '') jQuery('#UserName').addClass('error'); else jQuery('#UserName').removeClass('error');
+                        if (jQuery('#Password').val() == '') jQuery('#Password').addClass('error'); else jQuery('#Password').removeClass('error');
+                        jQuery('.loginwrap').addClass('animate0 wobble').bind(anievent, function () {
+                            jQuery(this).removeClass('animate0 wobble');
+                        });
+                    } else {
+                        jQuery('.loginwrapper').addClass('animate0 fadeOutUp').bind(anievent, function () {
+                            jQuery('#signupform').submit();
+                        });
+                    }
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+<!--</html>-->

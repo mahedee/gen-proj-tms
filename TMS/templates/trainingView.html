@@ -1,0 +1,104 @@
+﻿
+        <div class="dashboard">
+            <div class="pagetitle">
+                <h1>Training List</h1>
+                <span>List of Training in below....</span>
+            </div>
+            <p>
+                <a href="#/newTraining" class="btn btn-primary">Add New Training</a>
+            </p>
+            
+            <div class="progress progress-striped active" data-ng-show="isBusy">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+
+            <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid">
+                <div id="dyntable_length" class="dataTables_length">
+                    <label>
+                        Show
+                        <select name="dyntable_length" size="1" aria-controls="dyntable">
+                            <option value="10" selected="selected">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        entries
+                    </label>
+                </div>
+                <div id="dyntable_filter" class="dataTables_filter">
+                    <label>
+                        Search:
+                        <input type="text" aria-controls="dyntable">
+                    </label>
+                </div>
+
+                <table id="dyntable" class="table table-bordered table-invoice">
+                    <thead>
+                        <tr>
+                            <th>Training Title</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-ng-repeat="i in data">
+                       <tr>
+                           <td>
+                               {{i.title}}
+                           </td>
+                           <td>
+                               {{i.description}}
+                           </td>
+                           <td>
+                               {{i.startDate | date:"medium"}}
+                           </td>
+                           <td ng-controller="DeleteTrainingController"><a href="" data-ng-click="editTraining()">Edit</a> | <a href="" data-ng-click="deleteTraining(i.id)">Delete</a> </td> 
+                       </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+   
+
+
+
+
+
+
+
+
+<!--<div>
+    <div class="message-header">
+        <h1>Latest Declare Training</h1>
+        <p class="lead">Latest Messages...</p>
+        <div>Message count: {{data.length}} </div>
+    </div>
+
+    <div>
+        <a href="#/newmessage">Add New Message</a>
+    </div>
+
+    <div class="progress progress-striped active" data-ng-show="isBusy">
+        <div class="bar" style="width: 100%;"></div>
+    </div>
+
+    <div class="messages">
+        <div class="message row" data-ng-repeat="i in data">
+            <div class="title span10">
+                {{i.title}}
+            </div>
+            <div class="date span2">
+                {{i.description}}
+            </div>
+            <div class="contents span12">
+                {{i.startDate | date:"medium"}}
+            </div>
+
+
+        </div>
+    </div>
+</div>-->
+
+
+

@@ -1,0 +1,55 @@
+﻿<div>
+    <div class="dashboard">
+        <div class="pagetitle">
+            <h1>Training List</h1>
+            <span>List of Training in below....</span>
+        </div>
+        <p>
+            <a href="#/training/add" class="btn btn-primary">Add New Training</a>
+        </p>
+
+        <div class="progress progress-striped active" data-ng-show="isBusy">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+
+        <table id="dyntable" class="table table-bordered table-invoice">
+            <thead>
+                <tr>
+                    <th>Training Title</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody data-ng-repeat="i in data">
+                <tr>
+                    <td>
+                        {{i.Title}}
+                    </td>
+                    <td>
+                        {{i.Description}}
+                    </td>
+                    <td>
+                        {{i.StartDate | date:'dd-MMM-yyyy'}}
+                    </td>
+                    <td>
+                        {{i.EndDate | date:'dd-MMM-yyyy'}}
+                    </td>
+                    <td>
+                        {{i.Venue}}
+                    </td>
+                    <td class="center">
+                        <a class="icon-list-alt" title="Details" ng-href="#/training/{{i.Id}}"></a>
+                        |
+                        <a class="icon-edit" title="Edit" ng-href="#/training/edit/{{i.Id}}"></a>
+                        |
+                        <a class="icon-trash" title="Delete" ng-href="#/training/delete/{{i.Id}}"></a>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

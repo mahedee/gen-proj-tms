@@ -1,0 +1,56 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>Training Strategy Details</h1>
+        <span>Training Strategy details are given below....</span>
+    </div>
+    <table id="dyntable" class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td>Training Code</td>
+                <td>{{aTS.trainingCode}}</td>
+            </tr>
+            <tr>
+                <td>Iteration</td>
+                <td>{{aTS.iteration}}</td>
+            </tr>
+            <tr>
+                <td>Trainer</td>
+                <td>{{aTS.trainerId}}</td>
+            </tr>
+            <tr>
+                <td>Topic</td>
+                <td>{{aTS.topic}}</td>
+            </tr>
+            <tr>
+                <td>Batch</td>
+                <td>{{aTS.batchSize}}</td>
+            </tr>
+            <tr>
+                <td>Start Date</td>
+                <td>{{aTS.startDate  | date:'dd-MMM-yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>End Date</td>
+                <td>{{aTS.endDate  | date:'dd-MMM-yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Trainer Responsibility</td>
+                <td>{{aTS.trainersResponsibility}}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{aTS.statusId}}</td>
+            </tr>
+            <tr>
+                <td>Calender Year</td>
+                <td>{{aTS.calendarYear}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a ng-href="#/aTS/edit/{{aTS.id}}" class="btn btn-primary">Edit</a>
+        |
+        <a href="#/aTS/all" class="btn btn-primary">Back To the List</a>
+    </p>
+</div>

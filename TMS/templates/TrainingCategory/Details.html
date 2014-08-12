@@ -1,0 +1,26 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>Training Category Details</h1>
+        <span>Training Category details are given below....</span>
+    </div>
+
+    <table id="dyntable" class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td>Training Category</td>
+                <td>{{trainingCategory.name}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{trainingCategory.description}}</td>
+            </tr>      
+        </tbody>
+    </table>
+    <p>
+        <a ng-href="#/trainingCategory/edit/{{trainingCategory.id}}" class="btn btn-primary">Edit</a>
+        |
+        <a href="#/trainingCategory/all" class="btn btn-primary">Back To the List</a>
+    </p>
+    
+
+</div>

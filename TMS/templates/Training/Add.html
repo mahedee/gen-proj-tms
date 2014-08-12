@@ -1,0 +1,84 @@
+﻿<div class="pagetitle">
+    <h1>
+        Add Training
+    </h1>
+    <span>Create new training below....</span>
+</div>
+<form name="newTrainingForm" novalidate data-ng-submit="save(newTrainingForm)">
+    <table class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td class="width30">
+                    Training Title
+                </td>
+                <td>
+                    <input name="title" type="text" data-ng-model="newTraining.title" required data-ng-minlength="5" />
+                    <span class="error" data-ng-show="newTrainingForm.title.$error.required">*</span>
+                    <span class="error" data-ng-show="newTrainingForm.title.$error.minlength">Minimum 5 character</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="width30">
+                    Description
+                </td>
+                <td>
+                    <textarea name="description" rows="5" cols="30" data-ng-model="newTraining.description" required data-ng-minlength="15" />
+                    <span class="error" data-ng-show="newTrainingForm.body.$error.required">*</span>
+                    <span class="error" data-ng-show="newTrainingForm.body.$error.minlength">Minimum 15 character</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="width30">
+                    ATS Reference
+                </td>
+                <td>
+                    <!--<input name="ATSId" type="text" data-ng-model="newTraining.atsId" />-->
+                    <select ng-model="newTraining.atsId" ng-options="u.id as u.trainingCode for u in aTSList"></select>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="width30">
+                    Start Date
+                </td>
+                <td>
+                    <input name="startDate" type="text" data-ng-model="newTraining.startDate" />
+                </td>
+            </tr>
+            <tr>
+                <td class="width30">
+                    End Date
+                </td>
+                <td>
+                    <input name="endDate" type="text" data-ng-model="newTraining.endDate" />
+                    <!--<input type="text" ng-model="datepicker" />-->
+                </td>
+            </tr>
+            <tr>
+                <td class="width30">
+                    Venue
+                </td>
+                <td>
+                    <input name="Venue" type="text" data-ng-model="newTraining.Venue" />
+                </td>
+            </tr>
+
+            <!--<tr>
+                <td>
+                    Test dropdown
+                </td>
+                <td>
+                    <select ng-model="aTSSelectedItem" ng-options="u.trainingCode for u in aTSList"></select>
+                </td>
+            </tr>-->
+
+            <tr>
+                <td class="width30"></td>
+                <td>
+                    <input type="submit" class="btn btn-primary" value="Save" data-ng-disabled="newTrainingForm.$invalid" />
+                    <a href="#/training/all" class="btn btn-inverse">Cancel</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

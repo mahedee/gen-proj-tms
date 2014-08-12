@@ -1,0 +1,31 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>Delete Trainer</h1>
+        <span>Are you sure to Delete this ?....</span>
+    </div>
+
+    <form name="newTrainerForm" novalidate data-ng-submit="delete(newTrainerForm)">
+        <table id="dyntable" class="table table-bordered table-invoice">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>{{trainer.name}}</td>
+                </tr>
+                <tr>
+                    <td>Trainer Description</td>
+                    <td>{{trainer.description}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-danger" ng-click="delete(trainer)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="#/trainer/all" class="btn btn-inverse">Back to the List</a>
+        </p>
+    </form>
+  
+</div>

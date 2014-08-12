@@ -1,0 +1,148 @@
+﻿
+<script type="text/javascript">
+    $('.leftmenu').hide();
+    $('.userinfo').hide();
+    $('.input-append').hide();
+</script>
+
+
+<div class="pagetitle">
+    <h1>
+        Register
+    </h1>
+    <span>Create a Local account...</span>
+</div>
+
+<form class="form-horizontal" role="form" name="LocalRegisterForm" novalidate>
+    <!--<h4>Create a Local account</h4>
+    <hr />-->
+    <ul class="text-danger" ng-if="localRegisterErrors">
+        <li ng-repeat="localRegisterError in localRegisterErrors">{{ localRegisterError }}</li>
+    </ul>
+
+    <table class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td>
+                    User Name
+                </td>
+                <td>
+                    <input type="text" ng-model="user.userName" name="UserName" id="UserName" class="form-control" ng-required="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    <input type="text" ng-model="user.firstName" name="FirstName" id="FirstName" class="form-control" ng-required="true" />
+                    <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.FirstName.$invalid">The First Name field is invalid.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    <input type="text" ng-model="user.lastName" name="LastName" id="LastName" class="form-control" ng-required="true" />
+                    <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.LastName.$invalid">The Last Name field is invalid.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <input type="password" ng-model="user.password" id="Password" name="Password" class="form-control" ng-required="true" />
+                    <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Password.$invalid">The Password field is invalid.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Confirm Password
+                </td>
+                <td>
+                    <input type="password" ng-model="user.confirmPassword" id="ConfirmPassword" name="ConfirmPassword" class="form-control" ng-required="true" />
+                    <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Password.$invalid">The Password field is invalid.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" ng-model="user.email" name="Email" id="Email" class="form-control" ng-required="true" />
+                    <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Email.$invalid">The Email field is invalid.</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                    <input type="button" class="btn btn-success" value="Register" ng-click="register(user)" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!--<div class="form-group" style="margin-top:5px !important;">
+        <label for="UserName" class="col-md-2 control-label">User Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.userName" name="UserName" id="UserName" class="form-control" ng-required="true" />
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <label for="FirstName" class="col-md-2 control-label">First Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.firstName" name="FirstName" id="FirstName" class="form-control" ng-required="true" />
+            <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.FirstName.$invalid">The First Name field is invalid.</span>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <label for="LastName" class="col-md-2 control-label">Last Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.lastName" name="LastName" id="LastName" class="form-control" ng-required="true" />
+            <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.LastName.$invalid">The Last Name field is invalid.</span>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <label for="Password" class="col-md-2 control-label">Password</label>
+        <div class="col-md-10">
+            <input type="password" ng-model="user.password" id="Password" name="Password" class="form-control" ng-required="true" />
+            <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Password.$invalid">The Password field is invalid.</span>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <label for="Password" class="col-md-2 control-label">Confirm Password</label>
+        <div class="col-md-10">
+            <input type="password" ng-model="user.confirmPassword" id="ConfirmPassword" name="ConfirmPassword" class="form-control" ng-required="true" />
+            <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Password.$invalid">The Password field is invalid.</span>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <label for="UserName" class="col-md-2 control-label">Email</label>
+        <div class="col-md-10">
+            <input type="email" ng-model="user.email" name="Email" id="Email" class="form-control" ng-required="true" />
+            <span class="field-validation-error" ng-if="localRegisterFormSubmitted && LocalRegisterForm.Email.$invalid">The Email field is invalid.</span>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:5px !important;">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" class="btn btn-success" value="Register" ng-click="register(user)" />
+        </div>
+    </div>-->
+
+
+
+</form>

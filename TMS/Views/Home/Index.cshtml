@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TMS.Models.Training>
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.InitModule = "tmsApp";
+}
+
+@section Scripts{
+    @*<script src="~/js/home-index.js"></script>*@
+    <script src="~/Scripts/Application/app.js"></script>
+}
+
+
+<div data-ng-view=""></div>

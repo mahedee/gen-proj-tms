@@ -1,0 +1,42 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>Training Details</h1>
+        <span>Training details are given below....</span>
+    </div>
+
+    <table id="dyntable" class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td>Training Title</td>
+                <td>{{training.Title}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{training.Description}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Start Date
+                </td>
+                <td>
+                    {{training.StartDate | date:'dd-MMM-yyyy'}}
+                </td>
+            </tr>
+            <tr>
+                <td>End Date</td>
+                <td>{{training.EndDate | date:'dd-MMM-yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Venue</td>
+                <td>{{training.Venue}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a ng-href="#/training/edit/{{training.Id}}" class="btn btn-primary">Edit</a>
+        ||
+        <a href="#/training/all" class="btn btn-primary">Back To the List</a>
+    </p>
+
+</div>

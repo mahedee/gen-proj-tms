@@ -1,0 +1,78 @@
+﻿<!--<!DOCTYPE html>
+<html lang="en" data-ng-app="tmsApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login form</title>
+    <script src="~/Scripts/Application/app.js"></script>
+</head>
+<body>-->
+<script type="text/javascript">
+    $('.leftmenu').hide();
+    $('.userinfo').hide();
+    $('.input-append').hide();
+</script>
+
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <form class="form-horizontal" role="form" name="LoginForm" novalidate>
+
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div class="form-group">
+                        <label for="Email" class="col-md-2 control-label">User Name</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="user.userName" id="UserName" name="UserName" class="form-control" ng-required="true" />
+                            <span class="field-validation-error" ng-if="loginFormSubmitted && LoginForm.Email.$invalid">The Email field is invalid.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="col-md-2 control-label">Password</label>
+                        <div class="col-md-10">
+                            <input type="password" ng-model="user.password" id="Password" name="Password" class="form-control" ng-required="true" />
+                            <span class="field-validation-error" ng-if="loginFormSubmitted && LoginForm.Password.$invalid">The Password field is invalid.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button class="btn btn-success" ng-click="login(user)">
+                                <i class="fa fa-lock"></i>
+                                Log in
+                            </button>
+                            <i class="fa fa-refresh fa-spin fa-lg" ng-if="loginInProgress"></i>
+                        </div>
+                    </div>
+                    <p>
+                        <a ng-href="#/account/register">Register if you don't have a local account.</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                <div ng-if="loginProviders">
+                    <h4>Use another service to log in.</h4>
+                    <hr />
+                    <div id="socialLoginList">
+                        <p>
+                            <span ng-repeat="loginProvider in loginProviders">
+                                <button class="btn btn-default"
+                                        id="{{ loginProvider.name }}"
+                                        name="provider"
+                                        value="{{ loginProvider.name }}"
+                                        title="Log in using your {{ loginProvider.name }} account"
+                                        ng-click="externalLogin(loginProvider)">
+                                    <i class="fa fa-{{ loginProvider.name | lowercase }} fa-lg"></i>
+    {{ loginProvider.name }}
+                                </button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+<!--</body>
+</html>-->
+

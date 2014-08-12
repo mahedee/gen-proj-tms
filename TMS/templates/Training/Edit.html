@@ -1,0 +1,71 @@
+﻿<div>
+    
+    <div class="pagetitle">
+        <h1>
+            Edit Training
+        </h1>
+        <span>Edit training information below....</span>
+    </div>
+    <form name="newTrainingForm" novalidate data-abide>
+        <table class="table table-bordered table-invoice">
+            <tbody>
+                <tr>
+                    <td class="width30">
+                        Training Title
+                    </td>
+                    <td>
+                        <input name="title" type="text" data-ng-model="training.Title" required data-ng-minlength="5" />
+                        <span class="error" data-ng-show="newTrainingForm.title.$error.required">*</span>
+                        <span class="error" data-ng-show="newTrainingForm.title.$error.minlength">Minimum 5 character</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        Description
+                    </td>
+                    <td>
+                        <textarea name="description" rows="5" cols="30" data-ng-model="training.Description" required data-ng-minlength="15"></textarea>
+                        <span class="error" data-ng-show="newTrainingForm.body.$error.required">*</span>
+                        <span class="error" data-ng-show="newTrainingForm.body.$error.minlength">Minimum 15 character</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        Start Date
+                    </td>
+                    <td>
+                        <input name="startDate" type="text" data-ng-model="training.StartDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        End Date
+                    </td>
+                    <td>
+                        <input name="endDate" type="text" data-ng-model="training.EndDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        Venue
+                    </td>
+                    <td>
+                        <input name="venue" type="text" data-ng-model="training.Venue" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30"></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" ng-click="update(training)" data-ng-disabled="newTrainingForm.$invalid">Update</button>
+                        
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <p>
+            <a href="#/training/all" class="btn btn-primary">Back To the List</a>
+        </p>
+    </form>
+
+</div>

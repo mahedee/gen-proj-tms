@@ -1,0 +1,42 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>Trainer Details</h1>
+        <span>Trainer Details are given below....</span>
+    </div>
+
+    <table id="dyntable" class="table table-bordered table-invoice">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>{{trainer.name}}</td>
+            </tr>
+            <tr>
+                <td>Trainer Description</td>
+                <td>{{trainer.description}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Employee Id
+                </td>
+                <td>
+                    {{trainer.employeeId}}
+                </td>
+            </tr>
+            <tr>
+                <td>User Id</td>
+                <td>{{trainer.userId}}</td>
+            </tr>
+            <tr>
+                <td>Trainer Type</td>
+                <td>{{trainer.trainerType}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a ng-href="#/trainer/edit/{{trainer.id}}" class="btn btn-primary">Edit</a>
+        |
+        <a href="#/trainer/all" class="btn btn-primary">Back To the List</a>
+    </p>
+
+</div>

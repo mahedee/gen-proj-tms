@@ -1,0 +1,48 @@
+﻿<div>
+
+    <div class="pagetitle">
+        <h1>
+            Edit Training Category
+        </h1>
+        <span>Edit training Category information below....</span>
+    </div>
+    <form name="newTrainingForm" novalidate data-abide>
+        <table class="table table-bordered table-invoice">
+            <tbody>
+                <tr>
+                    <td class="width30">
+                        Training Category
+                    </td>
+                    <td>
+                        <input name="title" type="text" data-ng-model="trainingCategory.name" required data-ng-minlength="5" />
+                        <span class="error" data-ng-show="newTrainingForm.title.$error.required">*</span>
+                        <span class="error" data-ng-show="newTrainingForm.title.$error.minlength">Minimum 5 character</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        Description
+                    </td>
+                    <td>
+                        <textarea name="description" rows="5" cols="30" data-ng-model="trainingCategory.description" required data-ng-minlength="15" />
+                        <span class="error" data-ng-show="newTrainingForm.body.$error.required">*</span>
+                        <span class="error" data-ng-show="newTrainingForm.body.$error.minlength">Minimum 15 character</span>
+                    </td>
+                </tr>         
+          
+                <tr>
+                    <td class="width30"></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" ng-click="update(trainingCategory)" data-ng-disabled="newTrainingForm.$invalid" >Update</button>
+
+                    </td>                
+                </tr>
+
+            </tbody>
+        </table>
+        <p>
+            <a href="#/trainingCategory/all" class="btn btn-primary">Back To the List</a>
+        </p>
+    </form>
+
+</div>

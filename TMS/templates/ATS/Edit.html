@@ -1,0 +1,104 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>
+            Edit Training Strategy
+        </h1>
+        <span>Edit training Strategy information below....</span>
+    </div>
+    <form name="newTrainingStrategyForm" novalidate data-abide>
+        <table class="table table-bordered table-invoice">
+            <tbody>
+                <tr>
+                    <td>
+                        Training Code
+                    </td>
+                    <td>
+                        <input name="trainingCode" type="text" data-ng-model="aTS.trainingCode" required data-ng-minlength="5" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Iteration
+                    </td>
+                    <td>
+                        <input name="iteration" type="text" data-ng-model="aTS.iteration" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Trainer Id
+                    </td>
+                    <td>
+                        <input name="trainerId" type="text" data-ng-model="aTS.trainerId" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Topic
+                    </td>
+                    <td>
+                        <textarea name="topic" data-ng-model="aTS.topic"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Batch
+                    </td>
+                    <td>
+                        <input name="batch" data-ng-model="aTS.batchSize" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Start Date
+                    </td>
+                    <td>
+                        <input name="startDate" type="text" data-ng-model="aTS.startDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        End Date
+                    </td>
+                    <td>
+                        <input name="enddate" type="text" data-ng-model="aTS.endDate" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Trainer Responsibility
+                    </td>
+                    <td>
+                        <textarea name="trainerResponsibility" data-ng-model="aTS.trainersResponsibility"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        <input name="status" type="text" data-ng-model="aTS.statusId" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Calender Year
+                    </td>
+                    <td>
+                        <input name="calenderYear" type="text" data-ng-model="aTS.calendarYear" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30"></td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" ng-click="update(aTS)" data-ng-disabled="newTrainingStrategyForm.$invalid">Update</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="#/aTS/all" class="btn btn-primary">Back To the List</a>
+        </p>
+    </form>
+</div>

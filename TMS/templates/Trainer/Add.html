@@ -1,0 +1,69 @@
+﻿<div>
+    <div class="pagetitle">
+        <h1>
+            Add Trainer
+        </h1>
+        <span>Create new Trainer in below....</span>
+    </div>
+    <form name="newTrainerForm" novalidate data-ng-submit="save(newTrainerForm)">
+        <table class="table table-bordered table-invoice">
+            <tbody>
+                <tr>
+                    <td class="width30">
+                        Name
+                    </td>
+                    <td>
+                        <input name="name" type="text" data-ng-model="newTrainer.name" required data-ng-minlength="5" />
+                        <span class="error" data-ng-show="newTrainerForm.name.$error.required">*</span>
+                        <span class="error" data-ng-show="newTrainerForm.name.$error.minlength">Minimum 5 character</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        Description
+                    </td>
+                    <td>
+                        <textarea name="description" rows="5" cols="30" data-ng-model="newTrainer.description" required data-ng-minlength="15" />
+                        <span class="error" data-ng-show="newTrainer.description.$error.required">*</span>
+                        <!--<span class="error" data-ng-show="newTrainer.description.$error.minlength">Minimum 15 character</span>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                       Employee Id
+                    </td>
+                    <td>
+                        <input name="employeeId" type="text" data-ng-model="newTrainer.employeeId" />
+                        <!--<select ng-model="newTraining.atsId" ng-options="u.id as u.trainingCode for u in aTSList"></select>-->
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="width30">
+                        User Id
+                    </td>
+                    <td>
+                        <input name="userId" type="text" data-ng-model="newTrainer.userId" />
+                    </td>
+                </tr>
+           
+                <tr>
+                    <td class="width30">
+                        Trainer Type
+                    </td>
+                    <td>
+                        <input name="trainerType" type="text" data-ng-model="newTrainer.trainerType" />
+                    </td>
+                </tr>
+       
+                <tr>
+                    <td class="width30"></td>
+                    <td>
+                        <input type="submit" class="btn btn-primary" value="Save" data-ng-disabled="newTrainerForm.$invalid" />
+                        <a href="#/trainer/all" class="btn btn-inverse">Cancel</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

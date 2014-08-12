@@ -1,0 +1,325 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" data-ng-app="tmsApp">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @*@Styles.Render("~/Content/themes/css")*@
+    @*@Scripts.Render("~/Content/themes/js")*@
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    <link href="@Url.Content("~/Content/themes/site/css/style.default.css")" rel="stylesheet" type="text/css" />
+    <link id="skinstyle" rel="stylesheet" href="~/Content/themes/site/css/style.dark.css" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/site/prettify/prettify.css")" rel="stylesheet" type="text/css" />
+    
+    
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/angular.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/angular-route.js")"></script>*@
+
+    <script type="text/javascript" src="@Url.Content("~/Content/themes/site/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery-migrate-1.1.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery-ui-1.9.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/themes/site/js/jquery.dataTables.nightly.js")"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.cookie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/custom.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Content/themes/site/js/tinymce/jquery.tinymce.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Content/themes/site/js/chosen.jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.jgrowl.js")" type="text/javascript"></script>
+
+    @* <script src="@Url.Content("~/Content/themes/site/js/jquery.timepicker.js")" type="text/javascript"></script>*@
+
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.flot.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.flot.resize.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.flot.pie.js")" type="text/javascript"></script>
+    @*<script src="@Url.Content("~/Content/themes/site/js/charts.js")" type="text/javascript"></script>*@
+
+
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.flot.pack.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/requiredif.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/js/jquery.tagsinput.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/themes/site/prettify/prettify.js")" type="text/javascript"></script>
+
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            jQuery.noConflict();
+            jQuery(document).ready(function () {
+
+
+                jQuery('#dyntable').dataTable({
+                    "sPaginationType": "full_numbers",
+                    "aaSortingFixed": [[0, 'asc']],
+                    "fnDrawCallback": function (oSettings) {
+
+                    }
+                });
+
+                jQuery('.dyntable').dataTable({
+                    "sPaginationType": "full_numbers",
+                    "aaSortingFixed": [[3, 'desc']],  //Update by Mahedee because in task list sorting order should be end date and priority
+                    "fnDrawCallback": function (oSettings) {
+
+                    }
+                });
+                
+
+                //jQuery(".datepicker").datepicker({
+                //    //changeMonth: true,
+                //    //changeYear: true,
+                //    //minDate: "-99Y",
+                //    dateFormat: "dd/mm/yy"
+                //});
+                
+
+            });
+        };
+        
+    </script>
+
+</head>
+@*<body data-ng-controller="BaseController">*@
+<body>
+    <div class="mainwrapper">
+
+        <!-- START OF LEFT PANEL -->
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><a href="@Url.Action("Index", "Home")">TMS<span>v1.0</span></a></h1>
+            </div>
+            <!--logopanel-->
+
+            <div class="datewidget">Today is @DateTime.Now.ToString("f")</div>
+
+            <div class="searchwidget">
+
+                <div class="input-append">
+                    <form method="post" action="#">
+                        <div class="input-append">
+                            <input class="span2 search-query" type="text" placeholder="Search here...">
+                            <button class="btn" type="submit">
+                                <span class="icon-search"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!--searchwidget-->
+
+
+
+            <div class="leftmenu">
+                <ul class="nav nav-tabs nav-stacked">
+                    <li class="nav-header">Main Navigation</li>
+                    <li class="active">@Html.ActionLink("Dashboard", "Index", "Home")</li>
+
+                    <li class="dropdown">
+                        <a href=""><span class="icon-briefcase"></span>Organizational Training</a>
+                        <ul>
+                            <li><a ng-href="#/aTS/all">Annual Training Strategy</a></li>
+                            <li><a ng-href="#/training/all">Training</a></li>
+                            <li><a ng-href="#/default/uconstruction">Assign Trainer & Trainee</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Details</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Feedback</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Materials</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Attendence</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"><span class="icon-th-list"></span>Profile Settings</a>
+                        <ul>
+                            <li><a ng-href="#/default/uconstruction">User profile</a></li>
+                            <li><a ng-href="#/trainer/all">Trainer profile</a></li>
+                            <li><a ng-href="#/default/uconstruction">Employee profile</a></li>
+                            <li><a ng-href="#/default/uconstruction">Vendor profile</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href=""><span class="icon-briefcase"></span>Training Committee</a>
+                        <ul>
+                            <li><a ng-href="#/default/uconstruction">Training Committee</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Management Committee</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"><span class="icon-time"></span>Skill Matrix</a>
+                        <ul>
+                            <li><a ng-href="#/default/uconstruction">Employee Skill Matrix</a></li>
+                            <li><a ng-href="#/default/uconstruction">My Skill Matrix</a></li>
+
+
+                            @*<li>@Html.ActionLink("Time Log", "MyAssignTask", "Tasks")</li>
+                                <li>@Html.ActionLink("Burndown Charts", "BurndownCharts", "Projects")</li>*@
+                        </ul>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#"><span class="icon-hand-right"></span>Advanced Settings</a>
+                        <ul>
+                            <li><a ng-href="#/default/uconstruction">Lookup</a></li>
+                            <li><a ng-href="#/default/uconstruction">Skill Level</a></li>
+                            <li><a ng-href="#/default/uconstruction">Tools & Technology Category</a></li>
+                            <li><a ng-href="#/default/uconstruction">Tools & Technology</a></li>
+                            <li><a ng-href="#/trainingCategory/all">Training Category </a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Status</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Approach</a></li>
+                            <li><a ng-href="#/default/uconstruction">Training Feedback Form</a></li>
+                        </ul>
+
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#"><span class="icon-hand-right"></span>Account Settings</a>
+                        <ul>
+                            <li><a ng-href="#/account/register">Register</a></li>
+                            <li><a ng-href="#/account/login">Login</a></li>
+                        </ul>
+
+                    </li>
+
+
+
+
+                </ul>
+            </div>
+            <!--leftmenu-->
+
+        </div>
+        <!--mainleft-->
+        <!-- END OF LEFT PANEL -->
+        <!-- START OF RIGHT PANEL -->
+
+        <div class="rightpanel">
+            <div class="headerpanel">
+                <a href="#" class="showmenu"></a>
+
+                <div class="headerright">
+                    @*@{Html.RenderPartial("_Notification");}*@
+                    <div id="result">
+                        @*      @{Html.RenderAction("_Notification", "Home");}*@
+                    </div>
+                    <!--dropdown-->
+
+                    <div data-ng-controller="LoginController" class="dropdown userinfo">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="/page.html">Hi, Mahedee!<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("EditProfile", "Account")"><span class="icon-edit"></span>Edit Profile</a></li>
+                            <li><a href="@Url.Action("Manage", "Account")"><span class="icon-eye-open"></span>Change Password</a></li>
+                            @*   <li><a href=""><span class="icon-wrench"></span>Account Settings</a></li>*@ @*This Functionality Will be active later*@
+
+                            <li class="divider"></li>
+                            <li>
+                                @*<a href="@Url.Action("/account/logoff", "Account")">
+                                        <span class="icon-off"></span>
+                                        Sign Out
+                                    </a>*@
+                                @*<a href="#/account/logoff">Sign Out</a>*@
+
+                                <a href="#" data-ng-click="logout()">
+                                    <span class="icon-off"></span>
+                                    Logout
+
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--dropdown-->
+
+                </div>
+                <!--headerright-->
+
+            </div>
+            <!--headerpanel-->
+            <div class="pageheadertitle breadcrumbwidget">
+                <span style="vertical-align: middle; display: block;">
+                    @if (ViewBag.PageTitle != null)
+                    {
+                        @ViewBag.PageTitle
+                    }
+                </span>
+            </div>
+            <!--breadcrumbwidget-->
+            <!--pagetitle-->
+
+            <div class="maincontent">
+                <div class="contentinner">
+                    <div class="dashboard">
+
+                        <div data-ng-view></div>
+                    </div>
+                </div>
+                <!--contentinner-->
+            </div>
+            <!--maincontent-->
+
+        </div>
+        <!--mainright-->
+        <!-- END OF RIGHT PANEL -->
+
+
+        <div class="clearfix"></div>
+
+        <div class="footer">
+            <div class="footerleft">Project Management Tool v1.0</div>
+            <div class="footerright">Design & Developed by:</div>
+        </div>
+        <!--footer-->
+
+
+    </div>
+    <!--mainwrapper-->
+
+    <div id="jGrowl" class="top-right jGrowl">
+        <div class="jGrowl-notification"></div>
+    </div>
+
+
+    <script>
+        function Loading() {
+            jQuery("#ModalLoading").modal('show');
+        }
+    </script>
+
+    <script>
+        function Unload() {
+            jQuery("#ModalLoading").modal('hide');
+        }
+    </script>
+    <script>
+        function HidePopup(data) {
+            jQuery("#ModalLoading").modal('hide');
+            var adata = '#' + data;
+            jQuery(adata).modal('hide');
+            jQuery('.modal-backdrop').remove();
+        }
+        jQuery(document).ready(function () {
+            //jQuery(document).ajaxStart(function () {
+            //    jQuery("#ModalLoading").modal('show');
+            //});
+        });
+    </script>
+    <div id='ModalLoading' class="modal hide fade" tabindex="-1" style="width: 50px!important; height: 50px!important; overflow: hidden!important;" role="dialog" aria-hidden="true">
+        <img src="~/Content/themes/site/img/loaders/loader19.gif" /><br />
+        Loading....
+    </div>
+    @*@Scripts.Render("~/bundles/js")*@
+
+</body>
+</html>

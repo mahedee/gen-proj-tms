@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using TMS.Models;
+
+namespace TMS.Repository
+{
+    public class TMSContext : DbContext
+    {
+        public DbSet<Training> Trainings { get; set; }
+        public DbSet<TrainingCategory> TrainingCategories { get; set; }
+        public DbSet<ATS> ATS { get; set; }
+        public DbSet<Trainer> Trainers { get; set; }
+    }
+}

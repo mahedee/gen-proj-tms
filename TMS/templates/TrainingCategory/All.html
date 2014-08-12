@@ -1,0 +1,43 @@
+﻿<div>
+    <div class="dashboard">
+        <div class="pagetitle">
+            <h1>Training Category List</h1>
+            <span>List of Training Category in below....</span>
+        </div>
+
+        <p>
+            <a href="#/trainingCategory/add" class="btn btn-primary">Add New Training Category</a>
+        </p>
+
+        <div class="progress progress-striped active" data-ng-show="isBusy">
+            <div class="bar" style="width: 100%;"></div>
+        </div>
+        <table id="dyntable" class="table table-bordered table-invoice">
+            <thead>
+                <tr>
+                    <th>Training Category Title</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody data-ng-repeat="i in data">
+                <tr>
+                    <td>
+                        {{i.name}}
+                    </td>
+                    <td  width="73%">
+                        {{i.description}}
+                    </td>
+                    <td class="center">
+                        <a class="icon-list-alt" title="Details" ng-href="#/trainingCategory/{{i.id}}"></a>
+                        |
+                        <a class="icon-edit" title="Edit" ng-href="#/trainingCategory/edit/{{i.id}}"></a>
+                        |
+                        <a class="icon-trash" title="Delete" ng-href="#/trainingCategory/delete/{{i.id}}"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
