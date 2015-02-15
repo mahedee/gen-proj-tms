@@ -20,7 +20,6 @@ namespace TMS.Repository
         public DbSet<Training> Trainings { get; set; }
         public DbSet<TrainingCategory> TrainingCategories { get; set; }
         public DbSet<ATS> ATS { get; set; }
-<<<<<<< .mine
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
