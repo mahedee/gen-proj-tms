@@ -1455,6 +1455,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_SecurityLayout.cshtml" />
+    <Content Include="Templates\Account\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
