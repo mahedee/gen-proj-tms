@@ -1,4 +1,6 @@
-﻿        <div class="pagetitle">
+﻿<div>
+    <div class="dashboard">
+        <div class="pagetitle">
             <h1>Annual Training Strategy List</h1>
             <span>List of Annual Training Strategy in below....</span>
         </div>
@@ -38,21 +40,22 @@
             </thead>
             <tbody data-ng-repeat="i in data">
                 <tr>
-                    <td>{{i.TrainingCode}}</td>
-                    <!--<td>{{i.trainerId}}</td>-->
-                    <td>Mahedee</td>
-                    <td>{{i.Topic}}</td>
-                    <td>{{i.BatchSize}}</td>
-                    <td>{{i.StartDate  | date:'dd-MMM-yyyy'}}</td>
-                    <td>{{i.EndDate    | date:'dd-MMM-yyyy'}}</td>
-                    <td>{{i.CalendarYear}}</td>
+                    <td>{{i.trainingCode}}</td>
+                    <td>{{i.trainerId}}</td>
+                    <td>{{i.topic}}</td>
+                    <td>{{i.batchSize}}</td>
+                    <td>{{i.startDate  | date:'dd-MMM-yyyy'}}</td>
+                    <td>{{i.endDate    | date:'dd-MMM-yyyy'}}</td>
+                    <td>{{i.calendarYear}}</td>
                     <td class="center">
-                        <a class="icon-list-alt" title="Details" ng-href="#/aTS/{{i.Id}}"></a>
-                        ||
-                        <a class="icon-edit" title="Edit" ng-href="#/aTS/edit/{{i.Id}}"></a>
-                        ||
-                        <a class="icon-trash" title="Delete" ng-href="#/aTS/delete/{{i.Id}}"></a>
+                        <a class="icon-list-alt" title="Details" ng-href="#/aTS/{{i.id}}"></a>
+                        |
+                        <a class="icon-edit" title="Edit" ng-href="#/aTS/edit/{{i.id}}"></a>
+                        |
+                        <a class="icon-trash" title="Delete" ng-href="#/aTS/delete/{{i.id}}"></a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>

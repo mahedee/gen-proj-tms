@@ -13,11 +13,11 @@
             $routeProvider
                 .when("/", {
                 templateUrl: "/Templates/Default/Default.html",
-                controller: "DefaultController"
+                controller: "UConstructionController"
 
                 }).when("/home", {
                     templateUrl: "/Templates/Default/Default.html",
-                    controller: "DefaultController"
+                    controller: "UConstructionController"
 
                 }).when("/training/all", {
                 controller: "ListTrainingController",
@@ -83,43 +83,17 @@
                 controller: "EditATSController",
                 templateUrl: "/Templates/ATS/Edit.html"
 
-<<<<<<< .mine
             }).when("/account/register", {
                 controller: "RegisterController",
                 templateUrl: "/Templates/Account/Register.html"
-=======
-            }).when("/trainer/all", {
-                controller: "ListTrainerController",
-                templateUrl: "/Templates/Trainer/All.html"
->>>>>>> .r66
 
-<<<<<<< .mine
             }).when("/account/login", {
                 controller: "LoginController",
-                templateUrl: "/Templates/Account/Login.html",
-                reloadOnSearch: false
+                templateUrl: "/Templates/Account/Login1.html"
 
             })
-=======
-           }).when("/trainer/add", {
-               controller: "AddTrainerController",
-               templateUrl: "/Templates/Trainer/Add.html"
-
-           }).when("/trainer/:id", {
-               controller: "DetailsTrainerController",
-               templateUrl: "/Templates/Trainer/Details.html"
-
-           }).when("/trainer/delete/:id", {
-               controller: "DeleteTrainerController",
-               templateUrl: "/Templates/Trainer/Delete.html"
-
-           }).when("/trainer/edit/:id", {
-               controller: "EditTrainerController",
-               templateUrl: "/Templates/Trainer/Edit.html"
-           })
 
 
->>>>>>> .r66
                 .otherwise({ redirectTo: "/" });
 
         }

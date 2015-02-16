@@ -28,9 +28,6 @@ namespace TMS.Repository
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
 
-=======
-        public DbSet<Trainer> Trainers { get; set; }
->>>>>>> .r66
     }
 
 }

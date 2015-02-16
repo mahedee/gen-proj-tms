@@ -30,15 +30,8 @@
                     $scope.redirectToLogin();
                 }
             };
-
-            //$scope.userInfo = function () {
-            //    //identityService.getAccessToken();
-            //    var userInfo = identityService.getUserInfo();
-            //    return userInfo;
-            //};
-
-            //var signalRConnection = signalRConnectionService.getSignalRConnection();
-            /*signalRConnection.client.myNotification = function (message, userId) {
+            var signalRConnection = signalRConnectionService.getSignalRConnection();
+            signalRConnection.client.myNotification = function (message, userId) {
                 if (userId == $rootScope.authenticatedUser.id) {
                     notifierService.notify({
                         responseType: "success",
@@ -48,7 +41,7 @@
                     $scope.$apply();
                 }
                 console.log(name);
-            }; */
+            };
         }
     ]);
 })(angular.module("tmsApp"));

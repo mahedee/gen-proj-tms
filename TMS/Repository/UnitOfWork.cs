@@ -9,6 +9,7 @@ namespace TMS.Repository
     {
 
         private TMSContext context;
+
         public UnitOfWork()
         {
             context = new TMSContext();
@@ -62,19 +63,6 @@ namespace TMS.Repository
             }
         }
 
-        private TrainerRepository _trainerRepository;
-        public TrainerRepository TrainerRepository 
-        {
-            get 
-            {
-                if (this._trainerRepository == null) 
-                {
-                    this._trainerRepository = new TrainerRepository(context);
-                }
-                return _trainerRepository;
-            }
-        }
-
 
 
         private bool disposed = false;
@@ -95,11 +83,6 @@ namespace TMS.Repository
         {
             context.Dispose();
             GC.SuppressFinalize(this);
-        }
-
-        public void Save()
-        {
-            context.SaveChanges();
         }
 
     }

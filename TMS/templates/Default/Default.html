@@ -1,11 +1,12 @@
-﻿<script type="text/javascript">
-    $('.leftmenu').show();
-    $('.userinfo').show();
-    $('.input-append').show();
-</script>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+</head>
 
-    <!--<div>
-        <div class="dashboard">-->
+<body>
+    <div>
+        <div class="dashboard">
             <div class="pagetitle">
                 <h1>Upcoming Training</h1>
             </div>
@@ -19,14 +20,14 @@
                         <th>
                             Training Title
                         </th>
-                        <!--<th>
-                            Training Description
-                        </th>-->
                         <th>
-                            Start Date
+                            Training Description
                         </th>
                         <th>
-                            End Date
+                            Training Start Date
+                        </th>
+                        <th>
+                            Training End Date
                         </th>
                         <th>
                             Venue
@@ -37,22 +38,22 @@
                 <tbody data-ng-repeat="i in data">
                     <tr>
                         <td>
-                            {{i.Title}}
-                        </td>
-                        <!--<td>
-                            {{i.Description}}
-                        </td>-->
-                        <td>
-                            {{i.StartDate | date:'dd-MMM-yyyy'}}
+                            {{i.title}}
                         </td>
                         <td>
-                            {{i.EndDate | date:'dd-MMM-yyyy'}}
+                            {{i.description}}
                         </td>
                         <td>
-                            {{i.Venue}}
+                            {{i.startDate | date:'dd-MMM-yyyy'}}
+                        </td>
+                        <td>
+                            {{i.endDate | date:'dd-MMM-yyyy'}}
+                        </td>
+                        <td>
+                            {{i.venue}}
                         </td>
                         <td class="center">
-                            <a class="icon-list-alt" title="Details" ng-href="#/training/{{i.Id}}"></a>
+                            <a class="icon-list-alt" title="Details" ng-href="#/training/{{i.id}}"></a>
                         </td>
                     </tr>
 
@@ -60,5 +61,7 @@
 
             </table>
 
-        <!--</div>
-    </div>-->
+        </div>
+    </div>
+</body>
+</html>

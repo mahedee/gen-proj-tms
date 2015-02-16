@@ -8,34 +8,34 @@
         <tbody>
             <tr>
                 <td>Training Title</td>
-                <td>{{training.Title}}</td>
+                <td>{{training.title}}</td>
             </tr>
             <tr>
-                <td>Description</td>
-                <td>{{training.Description}}</td>
+                <td>Training Description</td>
+                <td>{{training.description}}</td>
             </tr>
             <tr>
                 <td>
                     Start Date
                 </td>
                 <td>
-                    {{training.StartDate | date:'dd-MMM-yyyy'}}
+                    {{training.startDate | date:'dd-MMM-yyyy'}}
                 </td>
             </tr>
             <tr>
                 <td>End Date</td>
-                <td>{{training.EndDate | date:'dd-MMM-yyyy'}}</td>
+                <td>{{training.endDate | date:'dd-MMM-yyyy'}}</td>
             </tr>
             <tr>
                 <td>Venue</td>
-                <td>{{training.Venue}}</td>
+                <td>{{training.venue}}</td>
             </tr>
         </tbody>
     </table>
 
     <p>
-        <a ng-href="#/training/edit/{{training.Id}}" class="btn btn-primary">Edit</a>
-        ||
+        <a ng-href="#/training/edit/{{training.id}}" class="btn btn-primary">Edit</a>
+        |
         <a href="#/training/all" class="btn btn-primary">Back To the List</a>
     </p>
 

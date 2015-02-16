@@ -867,7 +867,6 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\Application\app.js" />
-    <Content Include="Scripts\Application\Controllers\Account\LogOffController.js" />
     <Content Include="Scripts\Application\Controllers\Account\LoginController.js" />
     <Content Include="Scripts\Application\Controllers\Account\RegisterController.js" />
     <Content Include="Scripts\Application\Controllers\ATS\AddATSController.js" />
@@ -876,7 +875,6 @@
     <Content Include="Scripts\Application\Controllers\ATS\EditATSController.js" />
     <Content Include="Scripts\Application\Controllers\ATS\ListATSController.js" />
     <Content Include="Scripts\Application\Controllers\BaseController.js" />
-    <Content Include="Scripts\Application\Controllers\Default\DefaultController.js" />
     <Content Include="Scripts\Application\Controllers\Default\UConstructionController.js" />
     <Content Include="Scripts\Application\Controllers\Trainer\DeleteTrainerController.js" />
     <Content Include="Scripts\Application\Controllers\Trainer\ListTrainerController.js" />
@@ -1377,8 +1375,8 @@
     <Content Include="Scripts\jquery-2.0.2.min.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
     <Content Include="Templates\Account\Login2.html" />
-    <Content Include="Templates\Account\Login3.html" />
     <Content Include="Templates\Account\Login.html" />
+    <Content Include="Templates\Account\Login1.html" />
     <Content Include="Templates\Account\Register.html" />
     <Content Include="Templates\ATS\Add.html" />
     <Content Include="Templates\ATS\All.html" />

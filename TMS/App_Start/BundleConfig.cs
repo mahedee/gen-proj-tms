@@ -41,8 +41,6 @@ namespace TMS
                     "~/Scripts/Application/Controllers/Training/DeleteTrainingController.js",
                      "~/Scripts/Application/Controllers/Training/EditTrainingController.js",
                     "~/Scripts/Application/Controllers/Training/AddTrainingController.js",
-
-                    "~/Scripts/Application/Controllers/Default/DefaultController.js",
                     "~/Scripts/Application/Controllers/Default/UConstructionController.js",
 
                     "~/Scripts/Application/Controllers/TrainingCategory/AddTrainingCategoryController.js",
@@ -56,26 +54,15 @@ namespace TMS
                      "~/Scripts/Application/Controllers/ATS/DeleteATSController.js" ,
                      "~/Scripts/Application/Controllers/ATS/DetailsATSController.js" ,
                      "~/Scripts/Application/Controllers/ATS/EditATSController.js" ,
-<<<<<<< .mine
                      "~/Scripts/Application/Controllers/ATS/ListATSController.js" ,
                     
                      "~/Scripts/Application/Controllers/Account/RegisterController.js",
                       "~/Scripts/Application/Controllers/Account/LoginController.js",
-                       "~/Scripts/Application/Controllers/Account/LogOffController.js",
 
                        "~/Scripts/Application/Controllers/BaseController.js"
 
                       
 
-=======
-                     "~/Scripts/Application/Controllers/ATS/ListATSController.js",
-
-                     "~/Scripts/Application/Controllers/Trainer/AddTrainerController.js",
-                     "~/Scripts/Application/Controllers/Trainer/DeleteTrainerController.js",
-                     "~/Scripts/Application/Controllers/Trainer/DetailsTrainerController.js",
-                     "~/Scripts/Application/Controllers/Trainer/EditTrainerController.js",
-                     "~/Scripts/Application/Controllers/Trainer/ListTrainerController.js" 
->>>>>>> .r66
                     ));
 
 

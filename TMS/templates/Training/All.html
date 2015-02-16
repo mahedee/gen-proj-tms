@@ -25,26 +25,26 @@
             <tbody data-ng-repeat="i in data">
                 <tr>
                     <td>
-                        {{i.Title}}
+                        {{i.title}}
                     </td>
                     <td>
-                        {{i.Description}}
+                        {{i.description}}
                     </td>
                     <td>
-                        {{i.StartDate | date:'dd-MMM-yyyy'}}
+                        {{i.startDate | date:'dd-MMM-yyyy'}}
                     </td>
                     <td>
-                        {{i.EndDate | date:'dd-MMM-yyyy'}}
+                        {{i.endDate | date:'dd-MMM-yyyy'}}
                     </td>
                     <td>
-                        {{i.Venue}}
+                        {{i.venue}}
                     </td>
                     <td class="center">
-                        <a class="icon-list-alt" title="Details" ng-href="#/training/{{i.Id}}"></a>
+                        <a class="icon-list-alt" title="Details" ng-href="#/training/{{i.id}}"></a>
                         |
-                        <a class="icon-edit" title="Edit" ng-href="#/training/edit/{{i.Id}}"></a>
+                        <a class="icon-edit" title="Edit" ng-href="#/training/edit/{{i.id}}"></a>
                         |
-                        <a class="icon-trash" title="Delete" ng-href="#/training/delete/{{i.Id}}"></a>
+                        <a class="icon-trash" title="Delete" ng-href="#/training/delete/{{i.id}}"></a>
 
                     </td>
                 </tr>

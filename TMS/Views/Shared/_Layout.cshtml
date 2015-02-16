@@ -88,7 +88,6 @@
     </script>
 
 </head>
-@*<body data-ng-controller="BaseController">*@
 <body>
     <div class="mainwrapper">
 
@@ -142,7 +141,7 @@
                         <a href="#"><span class="icon-th-list"></span>Profile Settings</a>
                         <ul>
                             <li><a ng-href="#/default/uconstruction">User profile</a></li>
-                            <li><a ng-href="#/trainer/all">Trainer profile</a></li>
+                            <li><a ng-href="#/default/uconstruction">Trainer profile</a></li>
                             <li><a ng-href="#/default/uconstruction">Employee profile</a></li>
                             <li><a ng-href="#/default/uconstruction">Vendor profile</a></li>
                         </ul>
@@ -164,7 +163,7 @@
 
 
                             @*<li>@Html.ActionLink("Time Log", "MyAssignTask", "Tasks")</li>
-                                <li>@Html.ActionLink("Burndown Charts", "BurndownCharts", "Projects")</li>*@
+                            <li>@Html.ActionLink("Burndown Charts", "BurndownCharts", "Projects")</li>*@
                         </ul>
 
                     </li>
@@ -217,8 +216,8 @@
                     </div>
                     <!--dropdown-->
 
-                    <div data-ng-controller="LoginController" class="dropdown userinfo">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="/page.html">Hi, Mahedee!<b class="caret"></b></a>
+                    <div class="dropdown userinfo">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="/page.html">Hi, Mahedee @*@ViewBag.UserName!*@ <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="@Url.Action("EditProfile", "Account")"><span class="icon-edit"></span>Edit Profile</a></li>
                             <li><a href="@Url.Action("Manage", "Account")"><span class="icon-eye-open"></span>Change Password</a></li>
@@ -226,16 +225,9 @@
 
                             <li class="divider"></li>
                             <li>
-                                @*<a href="@Url.Action("/account/logoff", "Account")">
-                                        <span class="icon-off"></span>
-                                        Sign Out
-                                    </a>*@
-                                @*<a href="#/account/logoff">Sign Out</a>*@
-
-                                <a href="#" data-ng-click="logout()">
+                                <a href="@Url.Action("LogOff", "Account")">
                                     <span class="icon-off"></span>
-                                    Logout
-
+                                    Sign Out
                                 </a>
                             </li>
                         </ul>
